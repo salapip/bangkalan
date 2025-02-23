@@ -1,0 +1,368 @@
+:root {
+    /* Warna Utama */
+    --color-background: #F8F4E3;   /* Ivory Lembut */
+    --color-text-primary: #333333; /* Dark Charcoal */
+
+    /* Warna Sekunder dan Aksen */
+    --color-secondary: #1E4830;    /* Hijau Zaitun Tua */
+    --color-text-secondary: #6B6B6B; /* Abu-abu Hangat */
+    --color-accent: #D4AF37;       /* Emas Islami Lembut */
+
+    /* Warna untuk Interaksi */
+    --color-hover: #A3B18A;        /* Hijau Mint Soft */
+
+    /* Warna Footer dan Bayangan */
+    --color-footer: #B5A89A;       /* Coklat Abu-abu Lembut */
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: Tahoma;
+}
+
+body {
+    min-height: 100vh;
+    background-color: var(--color-background);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+.navbar {
+    display: flex;
+    background-color: var(--color-secondary);
+    padding: 2rem 7%;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    right: 0;
+    left: 0;
+    top: 0;
+    animation: slide-in 2s forwards;
+    z-index: 9999;
+}
+
+@keyframes slide-in {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    
+    to {
+        transform: translateY(0);
+        opacity: 1;
+
+    }
+}
+
+.navbar .logo {
+    font-size: 1.7rem;
+    font-weight: 600;
+    color: var(--color-accent);
+}
+
+.navbar .logo span {
+    color: var(--color-background);
+}
+
+.navbar .nav-links {
+    display: flex;
+    gap: 4rem;
+    font-size: 1rem;
+}
+
+.navbar .nav-links a {
+    text-decoration: none;
+    color: var(--color-background);
+}
+
+.navbar .nav-links a:hover {
+    color: var(--color-accent);
+}
+
+/* hero */
+.hero {
+    display: flex;
+    align-items: center;
+    min-height: 100vh;
+    padding: 2rem 7% 0;
+    justify-content: space-between;
+}
+
+.hero .box-title {
+    animation: left 2s forwards;
+}
+
+@keyframes left {
+    from {
+        opacity: -1;
+        translate: -100%;
+    }
+    
+    to {
+        opacity: 1;
+        translate: 0;
+    }
+}
+
+.hero .box-title h1 {
+    font-size: 3rem;
+    color: var(--color-text-primary);
+    text-shadow: 5px 1px 5px rgba(0, 0, 0, 0.3);
+}
+
+.hero .box-title h1 span {
+    color: gold;
+}
+
+.hero .box-title p {
+    font-size: 1.3rem;
+    font-weight: 100;
+    color: var(--color-text-secondary);
+    margin: 0.5rem 0 2rem;
+}
+
+.hero .box-title a {
+    padding: 13px 20px;
+    background-color: var(--color-secondary);
+    color: var(--color-background);
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    transition: background-color .2s linear, scale .2s linear;
+    cursor: pointer;
+}
+
+.hero .box-title a:hover {
+    background-color: #163623;
+    scale: 1.05;
+}
+
+.hero .box-img {
+    width: 40%;
+    animation: right 2s forwards;
+}
+
+@keyframes right {
+    from {
+        opacity: -1;
+        translate: 100%;
+    }
+
+    to {
+        opacity: 1;
+        translate: 0;
+    }
+}
+
+.hero .box-img img {
+    width: 100%;
+    border-radius: 50px;
+    box-shadow: 10px 0px 20px 1px rgba(0, 0, 0, 0.3);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        scale: 0.5;
+    }
+    to {
+        opacity: 1;
+        scale: 1;
+    }
+}
+
+/* biografi */
+.biografi {
+    padding: 5rem 7% 0;
+    scroll-margin-top: 80px;
+}
+
+.biografi .img-box {
+    display: flex;
+    justify-content: space-between;
+    gap: 4rem;
+}
+
+
+.biografi .img-box .box-img {
+    width: 100%;
+}
+
+.biografi .img-box img {
+    width: 100%;
+    filter: grayscale(100%);
+    filter: brightness(30%);
+    transition: filter .2s linear, border-radius .2s linear, box-shadow .2s linear;
+    border-radius: 10px;
+}
+
+.biografi .img-box img:hover {
+    filter: grayscale(0);
+    filter: brightness(100%);
+    box-shadow: 10px 0px 10px 2px rgba(0, 0, 0, 0.3);
+}
+
+.biografi .img-box .text-img .title {
+    font-size: 2.5rem;
+    margin-bottom: 1.2rem;
+    /* margin-top: 2rem; */
+    font-weight: 800;
+    text-shadow: 1px 2px 10px rgba(0, 0, 0, 0.3);
+    color: var(--color-text-primary);
+}
+
+.biografi .img-box .text-img .title span {
+    color: gold;
+}
+
+.biografi .img-box .text-img .sub {
+    font-size: 1.2rem;
+    line-height: 1.9;
+    font-weight: 100;
+}
+
+
+/* pendidikan */
+.pendidikan {
+    padding: 9rem 7% 0;
+}
+
+.pendidikan .class-img {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+    gap: 4rem;
+}
+
+.pendidikan .class-img .img-box {
+    width: 140%;
+}
+
+.pendidikan .class-img .img-box img {
+    width: 100%;
+    filter: grayscale(100%);
+    filter: brightness(30%);
+    transition: filter .2s linear, border-radius .2s linear, box-shadow .2s linear;
+    border-radius: 10px;
+}
+
+.pendidikan .class-img img:hover {
+    filter: grayscale(0);
+    filter: brightness(100%);
+    box-shadow: 10px 0px 10px 2px rgba(0, 0, 0, 0.3);
+}
+
+.pendidikan .class-img .sub .title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 1.2rem;
+    color: var(--color-text-primary);
+    text-shadow: 1px 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.pendidikan .class-img .sub .text {
+    line-height: 1.2;
+    font-size: 1.2rem;
+    margin: 0.3rem 0 0.3rem;
+}
+
+.pendidikan ul {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.5;
+}
+
+.pendidikan ul li {
+    /* list-style-type: none; */
+    font-size: 1.1rem;
+}
+
+/* pendidikan end */
+
+/* keteladanan */
+.keteladanan {
+    padding: 9rem 7% 0;
+    /* text-align: center; */
+}
+
+.keteladanan h1 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: var(--color-text-primary);
+    text-shadow: 1px 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.keteladanan h1 span {
+    color: gold;
+}
+
+.keteladanan .keteladanan-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.keteladanan .keteladanan-box h3 {
+    font-size: 1.4rem;
+    margin: 0.3rem 0 1.2rem;
+    color: var(--color-text-primary);
+}
+
+.keteladanan .keteladanan-box .container {
+    line-height: 1.5;
+    font-size: 1.1rem;
+    font-weight: 200;
+    text-align: center;
+}
+
+.keteladanan .keteladanan-box .container h5 {
+    font-weight: 200;
+    font-size: 1.2rem;
+}
+/* keteladanan end */
+
+/* wafat */
+.wafat {
+    padding: 9rem 7%;
+    text-align: center;
+}
+
+.wafat .container h1 {
+    font-size: 2.5rem;
+    color: var(--color-text-primary);
+    margin-bottom: 1rem;
+    text-shadow: 1px 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.wafat .container h1 span {
+    color: gold;
+}
+
+.wafat .container .text p {
+    font-size: 1.2rem;
+    font-weight: 100;
+}
+/* wafat end */
+
+/* footer */
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 3rem 0;
+    background-color: var(--color-footer);
+}
+
+footer p {
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+/* footer end */
